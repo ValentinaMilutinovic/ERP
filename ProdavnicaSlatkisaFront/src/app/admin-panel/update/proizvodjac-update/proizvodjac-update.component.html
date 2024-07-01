@@ -1,0 +1,51 @@
+<div class="page-header">
+  <div class="container">
+    <h1>Upadate proizvodjac</h1>
+  </div>
+</div>
+<hr>
+<div class="container">
+  <div class="row top-row">
+    <div class="col-xs-12 row end-xs">
+      <a routerLink="/api/ProizvodjacView" color="primary" mat-raised-button>
+        <mat-icon>chevron-left</mat-icon>
+        Nazad
+      </a>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-6">
+
+      <form #proizvodjacUpdateForm="ngForm">
+        <div class="row">
+          <div class="col-xs-6">
+            <mat-form-field appearance="fill"[style.width.px]=250>
+              <mat-label> Naziv proizvodjaca</mat-label>
+              <input type="text" matInput [(ngModel)]="proizvodjac.nazivProizvodjaca" name="nazivProizvodjaca">
+            </mat-form-field>
+          </div>
+
+          <div class="col-xs-6">
+            <mat-form-field appearance="fill" [style.width.px]=250>
+              <mat-label> Zemlja porekla</mat-label>
+              <input type="text" matInput [(ngModel)]="proizvodjac.zemljaPorekla" name="zemljaPorekla">
+            </mat-form-field>
+          </div>
+
+        </div>
+        <div class="row-2">
+          <div class="col-cs">
+            <div class="row between-xs">
+              <button mat-raised-button color="primary" (click)="OnUpdate()">Sacuvaj</button>
+              <button mat-raised-button color="warn" (click)="onDelete()">Delete</button>
+
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+

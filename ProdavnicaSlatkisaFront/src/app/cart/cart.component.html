@@ -1,0 +1,54 @@
+<body>
+  <main>
+    <header id="site-header">
+      <div class="container">
+        <h1 style="font-weight: 500;">Korpa</h1>
+      </div>
+    </header>
+
+    <div class="container">
+
+      <section id="cart">
+        <article class="product" *ngFor="let productIC of productsInCart">
+          <header>
+            <a class="remove" (click)="removeProduct(productIC)">
+              <img [src]="'assets/' + (productIC.proizvodNavigation.idProizvoda) + '.jpg'">
+              <h3>Remove product</h3>
+            </a>
+          </header>
+          <div class="content">
+            <h1>{{ productIC.proizvodNavigation.idproizvodjacaNavigation.nazivProizvodjaca }} {{productIC.proizvodNavigation.naziv}}</h1>
+            <p  >{{ productIC.proizvodNavigation.tipProizvoda.sastav }} </p>
+          </div>
+          <footer class="content">
+            <span class="qt-minus" (click)="decrementQuantity(productIC)">-</span>
+            <span class="qt" >{{ productIC.brojKomada }}</span>
+            <span class="qt-plus" (click)="incrementQuantity(productIC)">+</span>
+            <h2 class="full-price" >
+              {{productIC.iznos}}RSD
+            </h2>
+            <h2 class="price" >
+              {{ productIC.proizvodNavigation.cena }} RSD
+            </h2>
+          </footer>
+        </article>
+      </section>
+    </div>
+
+    <footer id="site-footer">
+      <div class="container clearfix">
+
+        <div class="left">
+          <h2 class="subtotal">Cena bez popusta: {{ setIznos() }}RSD</h2>
+          <h3 class="tax">Popust : <span>0</span>€</h3>
+        </div>
+
+        <div class="right">
+          <h1 class="total">Ukupno: <span>{{ setIznos() }}</span>RSD</h1>
+          <a class="btn" (click)="addBill()" routerLink="/Nastavi"  >Placanje</a>
+        </div>
+
+      </div>
+    </footer>
+  </main>
+</body>

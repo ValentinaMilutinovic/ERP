@@ -1,0 +1,79 @@
+<div class="page-header">
+  <div class="container">
+    <h1>Racun</h1>
+  </div>
+</div>
+<hr>
+
+<a routerLink='/api/dashboard'><button mat-raised-button class="back" color="primary">Meni</button></a>
+  <hr>
+
+<div class="container mat-elevation-z8">
+  <table mat-table [dataSource]="dataSource" matSort class="">
+
+    <!-- RacunId Column -->
+    <ng-container matColumnDef="RacunId">
+      <th mat-header-cell *matHeaderCellDef> Racun Id </th>
+      <td mat-cell *matCellDef="let element"> {{ element.racunId }} </td>
+    </ng-container>
+
+    <!-- UkupanIznos Column -->
+    <ng-container matColumnDef="UkupanIznos">
+      <th mat-header-cell *matHeaderCellDef> Ukupan Iznos </th>
+      <td mat-cell *matCellDef="let element"> {{ element.ukupanIznos }} </td>
+    </ng-container>
+
+    <!-- DatumKupovine Column -->
+    <ng-container matColumnDef="DatumKupovine">
+      <th mat-header-cell *matHeaderCellDef > Datum Kupovine </th>
+      <td mat-cell *matCellDef="let element"> {{ element.datumKupovine | date:'dd/MM/yyyy' }} </td>
+    </ng-container>
+
+    <!-- VremeKupovine Column -->
+    <ng-container matColumnDef="VremeKupovine">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Vreme Kupovine </th>
+      <td mat-cell *matCellDef="let element"> {{ element.vremeKupovine }} </td>
+    </ng-container>
+
+    <!-- Popust Column -->
+    <ng-container matColumnDef="Popust">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Popust </th>
+      <td mat-cell *matCellDef="let element"> {{ element.popust ? 'Yes' : 'No' }} </td>
+    </ng-container>
+
+    <!-- ProcenatPop Column -->
+    <ng-container matColumnDef="ProcenatPop">
+      <th mat-header-cell *matHeaderCellDef> Procenat Popusta </th>
+      <td mat-cell *matCellDef="let element"> {{ element.procenatPop }} </td>
+    </ng-container>
+
+    <!-- IznosSaPopustom Column -->
+    <ng-container matColumnDef="IznosSaPopustom">
+      <th mat-header-cell *matHeaderCellDef> Iznos Sa Popustom </th>
+      <td mat-cell *matCellDef="let element"> {{ element.iznosSaPopustom }} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="Status">
+      <th mat-header-cell *matHeaderCellDef> Status </th>
+      <td mat-cell *matCellDef="let element"> {{ element.status }} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="edit">
+      <th mat-header-cell *matHeaderCellDef> </th>
+      <td mat-cell *matCellDef="let element">
+        <a [routerLink]="['/api/Racun/RacunId',element.racunId]">
+          <mat-icon color=primary>edit</mat-icon>
+        </a>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+  <mat-paginator [length]="100"
+                 [pageSize]="10"
+                 [pageSizeOptions]="[5, 10, 25, 100]"
+                 aria-label="Select page">
+  </mat-paginator>
+</div>

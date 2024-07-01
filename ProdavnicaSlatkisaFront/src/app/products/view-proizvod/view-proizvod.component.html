@@ -1,0 +1,46 @@
+<mat-grid-list cols="4" rowHeight="450px" style="margin-top: 100px;"  [showHeader]="false">
+  <mat-grid-tile [colspan]="1" [rowspan]="1" [style.background]="'white'" class="name">
+    <div class="line1" >{{ proizvod?.idproizvodjacaNavigation?.nazivProizvodjaca }}<br>
+    {{ proizvod?.naziv }}</div>
+  </mat-grid-tile>
+  <mat-grid-tile [colspan]="2" [rowspan]="1" [style.background]="'white'"class="photo-tile">
+    <img *ngIf="proizvod && proizvod.idproizvoda" [src]="'assets/' + proizvod.idproizvoda + '.jpg'" alt="Product Image">
+  </mat-grid-tile>
+  <mat-grid-tile [colspan]="1" [rowspan]="1" [style.background]="'lightpink'" class="grid-tile-price" >
+    <div class="tekstic">
+      <div class="buttons">
+        <button class="pagination-button" mat-button [class.active]="activeTab === 'tipProizvoda'" (click)="setActiveTab('tipProizvoda')">Tip proizvoda</button>
+        <button class="pagination-button" mat-button [class.active]="activeTab === 'zemljaPorekla'" (click)="setActiveTab('zemljaPorekla')">Zemlja porekla</button>
+      </div>
+      <hr style="height:2px;border-width:0;color:gray;background-color:gray">
+      <div class="tab-content" *ngIf="activeTab === 'tipProizvoda'">
+        <p style="position: absolute; text-align: center; font-size: 20px; margin-left: 100px; ">{{ proizvod?.tipProizvoda?.sastav }}</p>
+      </div>
+      <div class="tab-content" *ngIf="activeTab === 'zemljaPorekla'">
+        <p style="position: absolute; text-align: center; font-size: 20px; margin-left: 105px; ">{{ proizvod?.idproizvodjacaNavigation?.zemljaPorekla }}</p>
+      </div>
+
+
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <hr style="height:2px;border-width:0;color:gray;background-color:gray">
+      <br/>
+      <div class="price" style="margin-left: 15px;">Cena: {{ proizvod?.cena | number:'1.2-2' }}</div>
+      <br/>
+      <hr style="height:2px;border-width:0;color:gray;background-color:gray">
+      <br/>
+      <br/>
+      <br>
+      <div class="korpa">
+       <button class="minus"  mat-raised-button color="primary" (click)="decreaseValue()">-</button>
+       <button class="num" (click)="addToCart()" mat-raised-button>{{ value }}</button>
+        <button class="plus" mat-raised-button color="primary"  (click)="increaseValue()">+</button>
+      </div>
+    </div>
+  </mat-grid-tile>
+
+</mat-grid-list>

@@ -1,0 +1,95 @@
+.banner-area{
+  display: flex;
+  margin-left: 10px;
+  margin-right: 10px;
+  justify-content: space-between;
+  align-items: center;
+  align-self: center;
+  text-align: center;
+  margin-top: 15px;
+
+ }
+
+ .paginator {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+
+}
+h1{
+
+  text-align: center;
+  font-family: "serif",Georgia;
+  font-size:xx-large;
+}
+.circle {
+  width: 10px;
+  height: 10px;
+  background-color: gray;
+  border-radius: 50%;
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+.circle.active {
+  background-color:  rgb(199, 47, 156);;
+}
+
+ .Banner{
+    width: 30%;
+    height: 70%;
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-left: 150px;
+}
+
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+
+
+  justify-content: center; /* Center the items horizontally */
+  align-items: center;
+
+}
+
+.example-card {
+  margin-top: 10px;
+  margin-right: 1em; /* Increase the value to adjust the spacing */
+  margin-left: 1em; /* Increase the value to adjust the spacing */
+  margin-bottom: 1em;
+  width: 300px;
+  background-color: rgb(234, 221, 202);
+  text-align: center;
+}
+.button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 20px; /* Adjust the margin as needed */
+  margin-right: 20px; /* Adjust the margin as needed */
+
+
+}
+
+.button button {
+  color: black; /* Change the text color to black */
+}
+
+.cena{
+  display: inline-block;
+  display: flex;
+  align-items: center;
+
+}
+
+
+.sort{
+ margin-left: 1250px;
+ margin-right: 20px;
+ width: 150px;
+}

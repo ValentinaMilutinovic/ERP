@@ -1,0 +1,31 @@
+.dashboard{
+  padding: 50px ;
+}
+.naslov
+{
+
+  text-align: center;
+  justify-content: center;
+
+
+}
+.button-div{
+  padding: 20px;
+  text-align: center;
+  justify-content: space-between;
+}
+.proizvod,
+.tip,
+.model,
+.proizvodjac,
+.racun,
+.kupac,
+.admin{
+  width: 300px;
+  height: 300px;
+  margin-left: 25px;
+  margin-left: 25px;
+  margin-top: 25px;
+  font-size: 20px;
+
+}

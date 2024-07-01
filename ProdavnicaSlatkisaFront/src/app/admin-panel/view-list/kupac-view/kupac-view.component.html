@@ -1,0 +1,59 @@
+<div class="page-header">
+  <div class="container">
+    <h1>Model</h1>
+
+
+  </div>
+</div>
+<hr>
+<a routerLink='/api/dashboard'><button mat-raised-button class="back" color="primary">Meni</button></a>
+  <hr>
+<div class="container mat-elevation-z8">
+  <table mat-table matSort [dataSource]="dataSource" class="">
+
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+
+    <!-- proizvodjac Column -->
+    <ng-container matColumnDef="usernameRk">
+      <th mat-header-cell *matHeaderCellDef > Username </th>
+      <td mat-cell *matCellDef="let element"> {{element.usernameRk}} </td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="lozinkaRk">
+      <th mat-header-cell *matHeaderCellDef> Lozinka </th>
+      <td mat-cell *matCellDef="let element"> {{element.lozinkaRk}} </td>
+    </ng-container>
+
+    <!-- Weight Column -->
+    <ng-container matColumnDef="brojKupovina">
+      <th mat-header-cell *matHeaderCellDef> Broj kupovina</th>
+      <td mat-cell *matCellDef="let element"> {{element.brojKupovina}} </td>
+    </ng-container>
+
+    <!-- Symbol Column 
+    <ng-container matColumnDef="ime">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Ime </th>
+      <td mat-cell *matCellDef="let element"> {{element.korisnik.ime}}ml </td>
+    </ng-container>
+
+    <ng-container matColumnDef="prezime">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Prezime </th>
+      <td mat-cell *matCellDef="let element"> {{element.korisnik.prezime}} </td>
+    </ng-container>
+  -->
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+  <mat-paginator [length]="100"
+              [pageSize]="10"
+              [pageSizeOptions]="[5, 10, 25, 100]"
+              aria-label="Select page">
+</mat-paginator>
+
+
+
+</div>

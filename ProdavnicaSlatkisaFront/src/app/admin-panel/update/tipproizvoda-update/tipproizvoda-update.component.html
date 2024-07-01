@@ -1,0 +1,45 @@
+<div class="page-header">
+  <div class="container">
+    <h1>Update tip proizvoda</h1>
+  </div>
+</div>
+<hr>
+<div class="container">
+  <div class="row top-row">
+    <div class="col-xs-12 row end-xs">
+      <a routerLink="/api/TipProizvodaView" color="primary" mat-raised-button>
+        <mat-icon>chevron-left</mat-icon>
+        Nazad
+      </a>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-6">
+
+      <form #modelUpdateForm="ngForm">
+        <div class="row">
+          <div class="col-xs-6">
+            <mat-form-field appearance="fill" [style.width.px]=570>
+              <mat-label> Sastav</mat-label>
+              <input type="text" matInput [(ngModel)]="tipproizvodum.sastav" name="sastav">
+            </mat-form-field>
+          </div>
+
+
+        </div>
+        <div class="row-2">
+          <div class="col-cs">
+            <div class="row between-xs">
+              <button mat-raised-button color="primary" (click)="OnUpdate()">Sacuvaj</button>
+              <button mat-raised-button color="warn" (click)="onDelete()">Delete</button>
+
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+

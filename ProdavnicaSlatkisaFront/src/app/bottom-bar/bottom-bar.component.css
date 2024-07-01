@@ -1,0 +1,19 @@
+.fotter{
+  padding: 10px 0;
+  width: 100%;
+  text-align: center;
+  margin: 1px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #424242;
+  bottom: 0;
+  position: fixed;
+}
+.email{
+  margin-right: 80px;
+}
+.phone{
+  margin-left: 80px;
+}
+

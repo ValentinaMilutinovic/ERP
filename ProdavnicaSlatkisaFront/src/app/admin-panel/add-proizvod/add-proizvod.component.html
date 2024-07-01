@@ -1,0 +1,56 @@
+<div class="add-proizvod-wrap">
+  <div class="add-proizvod-html">
+    <input id="tab-1" type="radio" name="tab" class="sign-in" checked>
+    <label for="tab-1" class="tab">Dodavanje proizvoda</label>
+    <div class="add-proizvod-form" [formGroup]="addProizvodForm" (ngSubmit)="addProizvod()">
+      <div class="sign-in-html">
+        <div class="group">
+
+          <mat-form-field>
+            <mat-label>Proizvodjac</mat-label>
+            <mat-select formControlName="idproizvodjaca" id="idproizvodjaca">
+              <mat-option *ngFor="let proizvodjac of proizvodjaci" [value]="proizvodjac.idproizvodjaca">
+                {{ proizvodjac.nazivProizvodjaca }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+          <mat-form-field appearance="fill">
+            <mat-label>Tip Proizvoda</mat-label>
+            <mat-select formControlName="tipProizvodaId" id="tipProizvodaId">
+              <mat-option *ngFor="let tipProizvod of tipoviProizvoda" [value]="tipProizvod.tipProizvodaId">{{ tipProizvod.sastav }}
+
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+
+        </div>
+        <div class="group">
+          <label for="naziv" class="label">Naziv</label>
+          <input id="naziv" type="text" class="input" formControlName="naziv">
+          <mat-error *ngIf="addProizvodForm.controls['naziv'].touched && addProizvodForm.controls['naziv'].value === ''">
+            Naziv is required.
+          </mat-error>
+        </div>
+        <div class="group">
+          <label for="cena" class="label">cena</label>
+          <input id="cena" type="text" class="input" formControlName="cena">
+          <mat-error *ngIf="addProizvodForm.controls['cena'].touched && addProizvodForm.controls['cena'].value === ''">
+            Cena is required.
+          </mat-error>
+        </div>
+        <div class="group">
+          <label for="kolicinaNaStanju" class="label">kolicina Na Stanju</label>
+          <input id="kolicinaNaStanju" type="text" class="input" formControlName="kolicinaNaStanju">
+          <mat-error *ngIf="addProizvodForm.controls['kolicinaNaStanju'].touched && addProizvodForm.controls['kolicinaNaStanju'].value === ''">
+            Kolicina is required.
+          </mat-error>
+        </div>
+        <div class="group" (click)="addProizvod()">
+          <input type="submit" class="button" value="Dodaj">
+        </div>
+        <div class="hr"></div>
+
+      </div>
+    </div>
+  </div>
+</div>

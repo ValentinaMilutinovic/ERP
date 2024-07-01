@@ -1,0 +1,36 @@
+<mat-toolbar color="primary">
+  <div class="LeftToolbar">
+    <a routerLink="/" style="color: white; text-decoration: none;"><mat-icon>home</mat-icon> Home</a>
+
+  </div>
+
+
+
+
+
+<div class="CenterToolbar">
+
+
+</div>
+<div class="RightToolbar">
+
+
+  <div class="search">
+    <input type="text" placeholder="Search here"
+        [(ngModel)]="searchText" (input)="onSearch()">
+    <a href="#" mat-icon-button color="white" (click)="onSearch()" aria-label="Search">
+      <mat-icon>search</mat-icon>
+    </a>
+  </div>
+
+    <a routerLink="api/Korpa/1" mat-icon-button color="white" aria-label="Skopping cart">
+      <mat-icon>shopping_cart</mat-icon>
+    </a>
+
+    <a routerLink="/api/Kupac/login" mat-icon-button color="white" aria-label="Profile">
+      <mat-icon>person</mat-icon>
+    </a>
+
+
+  </div>
+</mat-toolbar>

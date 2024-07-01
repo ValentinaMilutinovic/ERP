@@ -1,0 +1,64 @@
+.mat-button-base{
+  margin-right: 1em;
+  position:sticky;
+}
+.LeftToolbar{
+
+
+  margin-right:auto;
+}
+.CenterToolbar {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 270px;
+}
+
+.RightToolbar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.search {
+  display: flex;
+  align-items: center;
+}
+
+.search input {
+  margin-right: 10px;
+  padding: 6px;
+  border: none;
+  border-radius: 4px;
+  outline: none;
+}
+.LeftToolbar{
+  position:absolute;
+  justify-content: flex-start;
+  width: 200px;
+  font-size: 18px;
+
+}
+
+.menu-togler{
+  padding: 10px;
+  font-weight: bold;
+}
+.menu{
+  background-color: #ffffff;
+  border-width: 3px;
+  border-color: #C2185B;
+  color: #C2185B;
+  padding: 10px;
+  margin-top: 205px;
+}
+.menu-item{
+  cursor: pointer;
+  padding: 5px 0;
+}
+.menu-item:hover{
+  text-decoration: underline;
+}
+
+

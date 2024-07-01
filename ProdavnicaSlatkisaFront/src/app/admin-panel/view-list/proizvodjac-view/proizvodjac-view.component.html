@@ -1,0 +1,51 @@
+<div class="page-header">
+  <div class="container">
+    <h1>Proizvodjac</h1>
+
+
+  </div>
+</div>
+<hr>
+<a routerLink="/api/proizvodjacAdd"><button mat-raised-button class="dugme" color="primary">Dodaj</button></a>
+<a routerLink='/api/dashboard'><button mat-raised-button class="back" color="primary">Meni</button></a>
+  <hr>
+<div class="container mat-elevation-z8">
+  <table mat-table matSort [dataSource]="dataSource" class="">
+
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+
+    <!-- proizvodjac Column -->
+    <ng-container matColumnDef="nazivProizvodjaca">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header > Naziv Proizvodjaca </th>
+      <td mat-cell *matCellDef="let element"> {{element.nazivProizvodjaca}} </td>
+    </ng-container>
+
+    <!-- proizvodjac Column -->
+    <ng-container matColumnDef="zemljaPorekla">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header > Zemlja porekla </th>
+      <td mat-cell *matCellDef="let element"> {{element.zemljaPorekla}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="edit">
+      <th mat-header-cell *matHeaderCellDef> </th>
+      <td mat-cell *matCellDef="let element">
+        <a [routerLink]="['/api/Proizvodjac',element.idproizvodjaca]">
+          <mat-icon color=primary>edit</mat-icon>
+        </a>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+  <mat-paginator [length]="100"
+              [pageSize]="10"
+              [pageSizeOptions]="[5, 10, 25, 100]"
+              aria-label="Select page">
+</mat-paginator>
+
+
+
+</div>

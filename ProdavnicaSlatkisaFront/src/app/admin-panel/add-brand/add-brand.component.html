@@ -1,0 +1,30 @@
+<div class="add-proizvodjac-wrap">
+  <div class="add-proizvodjac-html">
+    <input id="tab-1" type="radio" name="tab" class="sign-in" checked>
+    <label for="tab-1" class="tab">Dodavanje proizvodjaca</label>
+    <div class="add-proizvodjac-form" [formGroup]="addBrandForm">
+      <div class="sign-in-html">
+        <div class="group">
+          <label for="nazivProizvodjaca" class="label">Naziv Proizvodjaca</label>
+          <input id="nazivProizvodjaca" type="text" class="input" formControlName="nazivProizvodjaca">
+          <mat-error *ngIf="addBrandForm.controls['nazivProizvodjaca'].touched && addBrandForm.controls['nazivProizvodjaca'].value === ''">
+            Name of manufactuer is required.
+          </mat-error>
+        </div>
+        <div class="group">
+          <label for="zemljaPorekla" class="label">Zemlja porekla</label>
+          <input id="zemljaPorekla" type="text" class="input" formControlName="zemljaPorekla">
+          <mat-error *ngIf="addBrandForm.controls['zemljaPorekla'].touched && addBrandForm.controls['zemljaPorekla'].value === ''">
+            Country of origin is required.
+          </mat-error>
+        </div>
+
+        <div class="group" (click)="addProizvodjac()">
+          <input type="submit" class="button" value="Dodaj">
+        </div>
+        <div class="hr"></div>
+
+      </div>
+    </div>
+  </div>
+</div>

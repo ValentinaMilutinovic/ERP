@@ -1,0 +1,23 @@
+<div class="add-tip-wrap">
+  <div class="add-tip-html">
+    <input id="tab-1" type="radio" name="tab" class="sign-in" checked>
+    <label for="tab-1" class="tab">Dodavanje tipa proizvoda</label>
+    <div class="add-tip-form" [formGroup]="addTipForm">
+      <div class="sign-in-html">
+        <div class="group">
+          <label for="sastav" class="label">Sastav</label>
+          <input id="sastav" type="text" class="input" formControlName="sastav">
+          <mat-error *ngIf="addTipForm.controls['sastav'].touched && addTipForm.controls['sastav'].value === ''">
+           Content of product is required.
+          </mat-error>
+        </div>
+
+        <div class="group" (click)="addTip()">
+          <input type="submit" class="button" value="Dodaj">
+        </div>
+        <div class="hr"></div>
+
+      </div>
+    </div>
+  </div>
+</div>
